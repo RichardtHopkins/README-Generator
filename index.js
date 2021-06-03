@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = reqire('./utils/gnerateMarkdown.js')
 
  const questions = [
      {
@@ -23,7 +24,7 @@ function init() {
         .prompt(questions)
         .then(data => {
             console.log(data);
-            writeToFile('./Readme.md', data);
+            writeToFile('./Readme.md', generatemarkdown(data));
         });
 }
 
